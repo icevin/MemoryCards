@@ -2,6 +2,7 @@
 
 namespace Ui {
 class MainWindow;
+class gameConfig;
 }
 
 class MainWindow : public QMainWindow
