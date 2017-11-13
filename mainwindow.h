@@ -16,7 +16,8 @@ private:
     Ui::MainWindow *ui;
 
 public slots:
-    void on_Exit_clicked();
     void on_New_Game_clicked();
     void on_Settings_clicked();
+    void on_Exit_clicked();
 };
+

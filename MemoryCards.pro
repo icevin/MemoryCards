@@ -28,7 +28,9 @@ SOURCES += \
         mainwindow.cpp
 
 HEADERS += \
-        mainwindow.h
+        mainwindow.h \
+        settings.h \
+    newgame.h
 
 FORMS += \
         mainwindow.ui
