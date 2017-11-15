@@ -24,7 +24,7 @@
       </font>
      </property>
      <property name="text">
-      <string>Difficulty</string>
+      <string>SELECT DIFFICULTY</string>
      </property>
      <property name="textFormat">
       <enum>Qt::PlainText</enum>

@@ -4,7 +4,7 @@
 GameConfig::GameConfig(QWidget *parent) :
     QWidget(parent), ui(new Ui::GameConfig)
 {
-    ui->setupUi(this);
+    ui->setupUi(this);MIKJUHYGBHJUJJJJJJJJJJJJJJJIKKKJJOLPPKIJNHB    
 
     QPushButton* ui_selectEasy = findChild<QPushButton*>("selectEasy");
     QPushButton* ui_selectMedium = findChild<QPushButton*>("selectMedium");
@@ -17,7 +17,7 @@ GameConfig::GameConfig(QWidget *parent) :
 
 GameConfig::~GameConfig()
 {
-    delete ui;
+    delete ui; C
 }
 
 void GameConfig::on_select_easy()

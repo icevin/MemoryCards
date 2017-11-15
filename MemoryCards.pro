@@ -31,8 +31,11 @@ SOURCES += \
 HEADERS += \
         mainwindow.h \
         settings.h \
+        gameconfig.h \
     gameconfig.h
+        ui_gameconfig.h
 
 FORMS += \
         mainwindow.ui \
     gameconfig.ui
+        gameconfig.ui
