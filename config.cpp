@@ -39,9 +39,9 @@ ConfigW::ConfigW(QWidget *parent) : QWidget(parent)
 
 
     this->setWindowTitle(QApplication::translate("Select Difficulty", "Select Difficulty", Q_NULLPTR));
-           label->setText(QApplication::translate("this", "SELECT DIFFICULTY", Q_NULLPTR));
-           selectEast->setText(QApplication::translate("this", "Easy", Q_NULLPTR));
-           selectMedium->setText(QApplication::translate("this", "Medium", Q_NULLPTR));
+    label->setText(QApplication::translate("this", "SELECT DIFFICULTY", Q_NULLPTR));
+    selectEast->setText(QApplication::translate("this", "Easy", Q_NULLPTR));
+    selectMedium->setText(QApplication::translate("this", "Medium", Q_NULLPTR));
            selectHard->setText(QApplication::translate("this", "Hard", Q_NULLPTR));
 
             QMetaObject::connectSlotsByName(this);
@@ -97,12 +97,5 @@ void ConfigW::on_select_hard()
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
-
-QT_BEGIN_NAMESPACE
-
-
-// namespace Ui
-
-QT_END_NAMESPACE
 
 #endif // OUT_H
