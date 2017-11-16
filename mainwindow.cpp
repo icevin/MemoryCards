@@ -1,5 +1,7 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
+#include "config.h"
+#include "gameconfig.h"
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -25,8 +27,8 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_New_Game_clicked()
 {
-    QWidget *set = new QWidget;
-    set->show();
+    ConfigW *c = new ConfigW;
+    c->show();
     hide();//this will disappear main window
 }
 void MainWindow::on_Settings_clicked()

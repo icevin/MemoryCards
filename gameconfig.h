@@ -1,4 +1,4 @@
-#ifndef NEWGAME_H
+/*#ifndef NEWGAME_H
 #define NEWGAME_H
 #include <QWidget>
 #include <QObject>
@@ -20,4 +20,4 @@ public slots:
     void on_select_hard();
 };
 
-#endif // NEWGAME_H
+#endif // NEWGAME_H */

@@ -1,4 +1,4 @@
-#include "gameconfig.h"
+/*#include "gameconfig.h"
 #include "ui_gameconfig.h"
 
 GameConfig::GameConfig(QWidget *parent) :
@@ -34,4 +34,4 @@ void GameConfig::on_select_medium()
 void GameConfig::on_select_hard()
 {
     QApplication::quit();
-}
+}*/

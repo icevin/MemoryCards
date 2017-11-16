@@ -26,16 +26,17 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += \
         main.cpp \
         mainwindow.cpp \
-        gameconfig.cpp
+        gameconfig.cpp \
+    config.cpp
 
 HEADERS += \
         mainwindow.h \
         settings.h \
         gameconfig.h \
-    gameconfig.h
+    gameconfig.h \
+    config.h
         ui_gameconfig.h
 
 FORMS += \
         mainwindow.ui \
-    gameconfig.ui
-        gameconfig.ui
+    config.ui
