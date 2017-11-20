@@ -1,7 +1,7 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include "config.h"
-#include "gameconfig.h"
+#include "rules.h"
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -12,7 +12,7 @@ MainWindow::MainWindow(QWidget *parent) :
     options = "0";
 
     QPushButton* ui_newGameButton = findChild<QPushButton*>("newGame");
-    QPushButton* ui_settingsButton = findChild<QPushButton*>("settings");
+    QPushButton* ui_settingsButton = findChild<QPushButton*>("rules");
     QPushButton* ui_exitButton = findChild<QPushButton*>("exit");
 
     connect(ui_newGameButton, SIGNAL (released()), this, SLOT (on_New_Game_clicked()));
@@ -33,8 +33,9 @@ void MainWindow::on_New_Game_clicked()
 }
 void MainWindow::on_Rules_clicked()
 {
-    QWidget *set = new QWidget;
-    set->show();
+    rules* r = new rules(this,1);
+    r->show();
+    hide();
 }
 
 void MainWindow::on_Exit_clicked()

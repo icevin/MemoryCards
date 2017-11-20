@@ -1,5 +1,6 @@
 #include "board.h"
 #include "card.cpp"
+#include "rules.h"
 #include <QMainWindow>
 #include <QThread>
 #include <algorithm>
@@ -170,7 +171,8 @@ void Board::tick() {
     }
 }
 void Board::on_select_help() {
-    return;
+    rules* r = new rules(parent, 0);
+    r->show();
 }
 
 void Board::on_select_exit() {
