@@ -1,8 +1,9 @@
 #include "config.h"
 #include "board.h"
 
-ConfigW::ConfigW(QWidget *parent) : QWidget(parent)
+ConfigW::ConfigW(MainWindow* p)
 {
+    parent = p;
     this->resize(469, 205);
     verticalLayout = new QVBoxLayout(this);
     verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
@@ -59,20 +60,20 @@ ConfigW::ConfigW(QWidget *parent) : QWidget(parent)
 
 void ConfigW::on_select_easy()
 {
-    Board *wdg = new Board(300, 5,4);
+    Board *wdg = new Board(120, 4, 4, parent);
     wdg->show();
     hide();
 }
 void ConfigW::on_select_medium()
 {
-    Board *wdg = new Board(300,5,4);
+    Board *wdg = new Board(180,4,5, parent);
     wdg->show();
-    hide();//this will disappear main window
+    hide();
 }
 
 void ConfigW::on_select_hard()
 {
-    Board *wdg = new Board(300,5,4);
+    Board *wdg = new Board(120,4,6,parent);
     wdg->show();
     hide();
 }

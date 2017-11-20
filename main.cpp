@@ -1,5 +1,4 @@
-#include "mainwindow.h"
-#include "gameconfig.h"
+#include "config.h"
 #include <QApplication>
 
 int main(int argc, char *argv[])

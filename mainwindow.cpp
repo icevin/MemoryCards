@@ -9,15 +9,16 @@ MainWindow::MainWindow(QWidget *parent) :
 
 {
     ui->setupUi(this);
-
+    options = "0";
 
     QPushButton* ui_newGameButton = findChild<QPushButton*>("newGame");
     QPushButton* ui_settingsButton = findChild<QPushButton*>("settings");
     QPushButton* ui_exitButton = findChild<QPushButton*>("exit");
 
     connect(ui_newGameButton, SIGNAL (released()), this, SLOT (on_New_Game_clicked()));
-    connect(ui_settingsButton, SIGNAL (released()), this, SLOT (on_Settings_clicked()));
+    connect(ui_settingsButton, SIGNAL (released()), this, SLOT (on_Rules_clicked()));
     connect(ui_exitButton, SIGNAL (released()), this, SLOT (on_Exit_clicked()));
+    c = new ConfigW(this);
 }
 
 MainWindow::~MainWindow()
@@ -27,11 +28,10 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_New_Game_clicked()
 {
-    ConfigW *c = new ConfigW;
     c->show();
     hide();//this will disappear main window
 }
-void MainWindow::on_Settings_clicked()
+void MainWindow::on_Rules_clicked()
 {
     QWidget *set = new QWidget;
     set->show();

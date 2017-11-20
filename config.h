@@ -12,20 +12,25 @@
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
+#include <QMainWindow>
+#include "mainwindow.h"
 
 QT_BEGIN_NAMESPACE
+
+class MainWindow;
 
 class ConfigW : public QWidget
 {
     Q_OBJECT
 public:
-    explicit ConfigW(QWidget *parent = nullptr);
+    explicit ConfigW(MainWindow* parent);
     QVBoxLayout *verticalLayout;
     QLabel *label;
     QHBoxLayout *horizontalLayout;
     QPushButton *selectEast;
     QPushButton *selectMedium;
     QPushButton *selectHard;
+    MainWindow *parent;
 signals:
 
 public slots:
