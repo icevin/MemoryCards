@@ -4,6 +4,7 @@
 #include <QThread>
 #include <algorithm>
 #include <string>
+Board::Board(int time, int cardRows, int cardCols, MainWindow* p)
 {
     parent = p;
     unturn = ".";
@@ -73,6 +74,7 @@
             board[i][j]->setObjectName(QString::number(i) + QStringLiteral(",") + QString::number(j));
             board[i][j]->setText(QStringLiteral(""));
             board[i][j]->setStyleSheet("background-color: rgba(108, 122, 137, 100%); color: rgb(0, 0, 0)");
+            if(std::stoi(parent->options.substr(0,1)) == 1) {
                 board[i][j]->setText(QString::number(pairs[pairmap]));
             }
             board[i][j]->setNum(pairs[pairmap]);
@@ -89,7 +91,19 @@
     pointD->setAlignment(Qt::AlignCenter);
     menu->addWidget(pointD);
 
+    pointN = new QLabel;
+    pointN->setObjectName(QStringLiteral("pointN"));
+    pointN->setFont(numFont);
+    pointN->setScaledContents(true);
+    pointN->setAlignment(Qt::AlignCenter);
+    menu->addWidget(pointN);
 
+    movesD = new QLabel("Moves: ");
+    movesD->setObjectName(QStringLiteral("movesD"));
+    movesD->setFont(menuFont);
+    movesD->setScaledContents(true);
+    movesD->setAlignment(Qt::AlignCenter);
+    menu->addWidget(movesD);
 
     movesN = new QLabel;
     movesN->setObjectName(QStringLiteral("movesN"));
