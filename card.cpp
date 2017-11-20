@@ -1,6 +1,6 @@
 #include "card.h"
 
-Card::Card(QObject *parent) : QObject(parent)
+Card::Card(QPushButton *parent) : QPushButton(parent)
 {
 
 }

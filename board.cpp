@@ -1,40 +1,37 @@
 #include "board.h"
-
-Board::Board(QWidget *parent) : QWidget(parent)
+#include "card.cpp"
+Board::Board(int time, int cardRows, int cardCols)
 {
-    this->resize(469, 205);
-    verticalLayout = new QVBoxLayout(this);
-    verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
-    label = new QLabel("Select Difficulty");
-    label->setObjectName(QStringLiteral("label"));
-    QFont font;
-    font.setPointSize(28);
-    font.setBold(true);
-    font.setWeight(75);
-    label->setFont(font);
-    label->setScaledContents(false);
-    label->setAlignment(Qt::AlignCenter);
+    timeLeft = time;
+    this->showMaximized();
+    this->setWindowTitle(QStringLiteral("Initializing..."));
 
-    verticalLayout->addWidget(label);
-
-    horizontalLayout = new QHBoxLayout();
-    horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
-    selectEast = new QPushButton(this);
-    selectEast->setObjectName(QStringLiteral("selectEast"));
-
-    horizontalLayout->addWidget(selectEast);
-
-    selectMedium = new QPushButton(this);
-    selectMedium->setObjectName(QStringLiteral("selectMedium"));
-
-    horizontalLayout->addWidget(selectMedium);
-
-    selectHard = new QPushButton(this);
-    selectHard->setObjectName(QStringLiteral("selectHard"));
-
-    horizontalLayout->addWidget(selectHard);
+    board.resize(cardRows);
+    for(int i = 0; i < cardRows; i++) {
+        board.at(i).resize(cardCols);
+    }
 
 
-    verticalLayout->addLayout(horizontalLayout);
+    bvLayout = new QVBoxLayout(this);
+    bvLayout->setObjectName(QStringLiteral("vertLayout"));
 
+    bLayout = new QGridLayout(this);
+
+    for(int i = 0; i<cardRows; i++)
+    {
+        for(int j = 0; j<cardCols; j++) {
+            board[i][j] = new Card(new QPushButton);
+            board[i][j]->setObjectName(QString::number(i) + QStringLiteral(",") + QString::number(j));
+            board[i][j]->setText(QString::number(i) + QStringLiteral(",") + QString::number(j));
+            board[i][j]->setAutoFillBackground(true);
+            board[i][j]->setStyleSheet("background-color: rgb(108, 122, 137); color: rgb(108, 255, 137)");
+            bLayout->addWidget(board[i][j],i,j,1,1,Qt::AlignCenter);
+        }
+    }
+
+    bvLayout->addLayout(bLayout);
+
+    t = new QTimer();
+    t->start(1000);
+    connect(t,SIGNAL(timeout()),this,SLOT(tick()));
 }

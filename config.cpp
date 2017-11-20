@@ -1,4 +1,5 @@
 #include "config.h"
+#include "board.h"
 
 ConfigW::ConfigW(QWidget *parent) : QWidget(parent)
 {
@@ -42,36 +43,36 @@ ConfigW::ConfigW(QWidget *parent) : QWidget(parent)
     label->setText(QApplication::translate("this", "SELECT DIFFICULTY", Q_NULLPTR));
     selectEast->setText(QApplication::translate("this", "Easy", Q_NULLPTR));
     selectMedium->setText(QApplication::translate("this", "Medium", Q_NULLPTR));
-           selectHard->setText(QApplication::translate("this", "Hard", Q_NULLPTR));
+    selectHard->setText(QApplication::translate("this", "Hard", Q_NULLPTR));
 
-            QMetaObject::connectSlotsByName(this);
+    QMetaObject::connectSlotsByName(this);
 
-            QPushButton* ui_selectEasy = findChild<QPushButton*>("selectEasy");
-            QPushButton* ui_selectMedium = findChild<QPushButton*>("selectMedium");
-            QPushButton* ui_selectHard = findChild<QPushButton*>("selectHard");
+    QPushButton* ui_selectEasy = findChild<QPushButton*>("selectEast");
+    QPushButton* ui_selectMedium = findChild<QPushButton*>("selectMedium");
+    QPushButton* ui_selectHard = findChild<QPushButton*>("selectHard");
 
-            connect(ui_selectEasy, SIGNAL (released()), this, SLOT (on_select_easy()));
-            connect(ui_selectMedium, SIGNAL (released()), this, SLOT (on_select_medium()));
-            connect(ui_selectHard, SIGNAL (released()), this, SLOT (on_select_hard()));
+    connect(ui_selectEasy, SIGNAL (released()), this, SLOT (on_select_easy()));
+    connect(ui_selectMedium, SIGNAL (released()), this, SLOT (on_select_medium()));
+    connect(ui_selectHard, SIGNAL (released()), this, SLOT (on_select_hard()));
 }
 
 
 void ConfigW::on_select_easy()
 {
-    QWidget *wdg = new QWidget;
+    Board *wdg = new Board(300, 5,4);
     wdg->show();
     hide();
 }
 void ConfigW::on_select_medium()
 {
-    QWidget *wdg = new QWidget;
+    Board *wdg = new Board(300,5,4);
     wdg->show();
     hide();//this will disappear main window
 }
 
 void ConfigW::on_select_hard()
 {
-    QWidget *wdg = new QWidget;
+    Board *wdg = new Board(300,5,4);
     wdg->show();
     hide();
 }

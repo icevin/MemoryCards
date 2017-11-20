@@ -29,9 +29,9 @@ public:
 signals:
 
 public slots:
-    void on_select_easy();
-    void on_select_medium();
-    void on_select_hard();
+    void on_select_easy(); //5 minutes, 20 cards
+    void on_select_medium(); //2 minutes, 20 cards
+    void on_select_hard(); //2 minutes,
 };
 
 #endif // CONFIG_H

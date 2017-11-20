@@ -27,13 +27,15 @@ SOURCES += \
         main.cpp \
         mainwindow.cpp \
     config.cpp \
-    board.cpp
+    board.cpp \
+    card.cpp
 
 HEADERS += \
         mainwindow.h \
         settings.h \
     config.h \
-    board.h
+    board.h \
+    card.h
         ui_gameconfig.h
 
 FORMS += \

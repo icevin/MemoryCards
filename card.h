@@ -2,16 +2,21 @@
 #define CARD_H
 
 #include <QObject>
+#include <QPushButton>
 
-class Card : public QObject
+class Card : public QPushButton
 {
     Q_OBJECT
 public:
-    explicit Card(QObject *parent = nullptr);
-
+    explicit Card(QPushButton*);
+    void flip();
+    int getState(); //-1 = flipped, 0 = not selected, 1 = selected
 signals:
 
 public slots:
+
+private:
+    int state;
 };
 
 #endif // CARD_H
